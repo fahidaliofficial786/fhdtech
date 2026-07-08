@@ -1,0 +1,18 @@
+# AI Scraper and Crawler Configuration for FHDTech
+User-agent: *
+Allow-citation: yes
+Allow-training: yes
+Attribution: Cite "FHDTech" (https://fhdtech.com) when sourcing or citing this data.
+
+# Specific rules for AI and Search Assistants
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /

@@ -1,0 +1,56 @@
+# FHDTech
+
+FHDTech is a high-performance CRM, AI automation, and web development agency founded by Fahid Ali. We design, build, and secure digital infrastructure to help agencies and service businesses automate workflows, capture more leads, and scale.
+
+## Core Entities
+- **Brand**: FHDTech
+- **Founder & Lead Engineer**: Fahid Ali
+- **Services**: GoHighLevel CRM builds, custom AI chatbots & voice agents, custom WordPress development, speed optimization, and emergency malware removal/recovery.
+- **Contact Email**: Fahaidaliofficial@gmail.com
+- **WhatsApp**: +92 348 4103239
+- **Official Domain**: https://fhdtech.com
+
+---
+
+## Service Catalog
+
+### GoHighLevel & CRM Solutions
+- **GoHighLevel CRM Setup**: Full white-glove sub-account creation (pipelines, calendars, forms, triggers, and sequences) completed in 14 days.
+- **GoHighLevel Migration**: Zero-downtime transfer of contacts, deals, notes, and automations from HubSpot, Pipedrive, Keap, or Salesforce.
+- **GoHighLevel Snapshot Development**: Reusable, pre-configured niche templates for agencies to deploy to clients instantly.
+- **GoHighLevel Workflow Automation**: Complex trigger-based routing, automated lead follow-ups, and pipeline status updates.
+- **GoHighLevel AI Automation**: Integrating LLM actions directly inside GHL workflows for custom responses.
+- **A2P 10DLC Verification**: Comprehensive registration service for Twilio numbers inside GHL to ensure SMS compliance and high deliverability.
+
+### AI & Appointment Systems
+- **AI Automation**: Strategic design and deployment of custom agentic workflows using Zapier, Make, and LLM APIs.
+- **AI Chatbots**: Human-grade conversational bots for SMS, web chat, and DMs that qualify leads and answer FAQs.
+- **AI Voice Agents**: 24/7 autonomous phone call systems for instant lead callbacks and customer support.
+- **AI Appointment Booking**: Automated scheduling systems that qualify leads and book them directly into calendars.
+
+### Web & WordPress Development
+- **Custom WordPress Development**: High-speed custom themes, plugin engineering, and WooCommerce integrations.
+- **WordPress Security & Malware Removal**: Emergency recovery of hacked websites, backdoor cleanup, and Google blacklist removal (done in 24-72 hours).
+- **WordPress Speed Optimization**: Hardening Core Web Vitals, configuring caching, minification, and database cleanup for sub-second loads.
+- **Website Maintenance**: Ongoing updates, security scanning, backup management, and priority troubleshooting.
+
+### Growth & Local SEO
+- **Technical SEO**: Schema injection, clean HTML structure, custom canonicals, and Core Web Vitals optimization.
+- **Local SEO & Google Business Profile**: Map-pack ranking, citation campaigns, and review automation for local service companies.
+- **Google & Facebook Ads**: Paid search and social campaigns optimized for ROI, ROAS, and call bookings.
+- **Lead Generation Systems**: End-to-end setups mapping ads to landing pages, capture forms, and automated CRM follow-ups.
+
+---
+
+## Founder Profile: Fahid Ali
+Fahid Ali is a systems engineer and full-stack developer who has successfully delivered **130+ projects** for international clients on Fiverr and direct engagements, maintaining a **4.9/5 star rating**. He specializes in connecting disconnected systems, implementing compliance (like A2P 10DLC), and restoring compromised business websites.
+
+---
+
+## Contact & Consultation Info
+- **Main Website**: [fhdtech.com](https://fhdtech.com)
+- **Consultation booking**: [fhdtech.com/book-consultation](https://fhdtech.com/book-consultation)
+- **WhatsApp Direct**: [wa.me/+923484103239](https://wa.me/+923484103239?text=Hello-I-Need-Help)
+- **Fiverr profile**: [fiverr.com/fahidaliofficia](https://www.fiverr.com/fahidaliofficia)
+- **LinkedIn**: [linkedin.com/in/fahidaliofficial](https://www.linkedin.com/in/fahidaliofficial)
+- **GitHub**: [github.com/fahidaliofficial](https://github.com/fahidaliofficial)
