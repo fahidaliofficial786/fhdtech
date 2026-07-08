@@ -926,28 +926,46 @@ function HomePage() {
             </p>
           </div>
 
-          <div className="bg-white rounded-3xl border border-slate-100 p-8 shadow-xl shadow-slate-100/40 min-h-[360px] flex flex-col justify-between">
+          <div className="bg-gradient-to-br from-slate-900 via-brand-primary to-slate-950 text-white rounded-3xl border border-white/10 p-8 md:p-10 shadow-2xl relative overflow-hidden shadow-brand-primary/20 min-h-[380px] flex flex-col justify-between">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-brand-accent/10 rounded-full blur-2xl pointer-events-none" />
+
+            {quizStep < 3 && (
+              <div className="w-full bg-white/10 h-1.5 rounded-full overflow-hidden mb-8">
+                <div
+                  className="bg-brand-accent h-full transition-all duration-300"
+                  style={{ width: `${((quizStep + 1) / 3) * 100}%` }}
+                />
+              </div>
+            )}
+
             {quizStep === 0 && (
               <div>
-                <p className="text-xs font-bold text-brand-accent uppercase tracking-widest mb-2">
-                  Step 1 of 3
+                <p className="text-xs font-bold text-brand-accent uppercase tracking-widest mb-2 flex items-center gap-1.5">
+                  <span className="size-1.5 rounded-full bg-brand-accent animate-pulse" /> Step 1 of
+                  3
                 </p>
-                <h3 className="font-display text-xl font-bold text-brand-primary mb-6">
+                <h3 className="font-display text-xl font-bold text-white mb-6 leading-snug">
                   How fast do you respond to new website/ad leads?
                 </h3>
-                <div className="space-y-3">
+                <div className="grid gap-3">
                   {[
                     { label: "Within 5 minutes", value: "fast" },
                     { label: "Between 1 to 2 hours", value: "medium" },
                     { label: "Next business day", value: "slow" },
                     { label: "We struggle to call them back", value: "none" },
-                  ].map((opt) => (
+                  ].map((opt, idx) => (
                     <button
                       key={opt.label}
                       onClick={() => handleQuizAnswer(0, opt.value)}
-                      className="w-full text-left p-4 rounded-2xl border border-slate-100 hover:border-brand-accent/30 hover:bg-slate-50/50 transition-colors text-sm font-medium text-slate-700"
+                      className="group w-full flex items-center justify-between p-4 rounded-2xl border border-white/10 bg-white/5 hover:border-brand-accent/50 hover:bg-white/15 transition-all text-left text-sm font-semibold text-slate-200"
                     >
-                      {opt.label}
+                      <div className="flex items-center gap-3">
+                        <span className="grid size-8 shrink-0 place-items-center rounded-xl bg-white/10 text-xs font-bold text-slate-400 group-hover:bg-brand-accent group-hover:text-white transition-colors">
+                          {idx === 0 ? "A" : idx === 1 ? "B" : idx === 2 ? "C" : "D"}
+                        </span>
+                        <span>{opt.label}</span>
+                      </div>
+                      <ArrowRight className="size-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all text-brand-accent shrink-0" />
                     </button>
                   ))}
                 </div>
@@ -956,13 +974,14 @@ function HomePage() {
 
             {quizStep === 1 && (
               <div>
-                <p className="text-xs font-bold text-brand-accent uppercase tracking-widest mb-2">
-                  Step 2 of 3
+                <p className="text-xs font-bold text-brand-accent uppercase tracking-widest mb-2 flex items-center gap-1.5">
+                  <span className="size-1.5 rounded-full bg-brand-accent animate-pulse" /> Step 2 of
+                  3
                 </p>
-                <h3 className="font-display text-xl font-bold text-brand-primary mb-6">
+                <h3 className="font-display text-xl font-bold text-white mb-6 leading-snug">
                   How are your leads stored and tracked?
                 </h3>
-                <div className="space-y-3">
+                <div className="grid gap-3">
                   {[
                     { label: "Sticky notes, diaries, or scattered Google Sheets", value: "sheets" },
                     {
@@ -971,13 +990,19 @@ function HomePage() {
                     },
                     { label: "No unified database, they remain in email inboxes", value: "none" },
                     { label: "Fully automated pipelines inside GoHighLevel", value: "ghl" },
-                  ].map((opt) => (
+                  ].map((opt, idx) => (
                     <button
                       key={opt.label}
                       onClick={() => handleQuizAnswer(1, opt.value)}
-                      className="w-full text-left p-4 rounded-2xl border border-slate-100 hover:border-brand-accent/30 hover:bg-slate-50/50 transition-colors text-sm font-medium text-slate-700"
+                      className="group w-full flex items-center justify-between p-4 rounded-2xl border border-white/10 bg-white/5 hover:border-brand-accent/50 hover:bg-white/15 transition-all text-left text-sm font-semibold text-slate-200"
                     >
-                      {opt.label}
+                      <div className="flex items-center gap-3">
+                        <span className="grid size-8 shrink-0 place-items-center rounded-xl bg-white/10 text-xs font-bold text-slate-400 group-hover:bg-brand-accent group-hover:text-white transition-colors">
+                          {idx === 0 ? "A" : idx === 1 ? "B" : idx === 2 ? "C" : "D"}
+                        </span>
+                        <span>{opt.label}</span>
+                      </div>
+                      <ArrowRight className="size-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all text-brand-accent shrink-0" />
                     </button>
                   ))}
                 </div>
@@ -986,13 +1011,14 @@ function HomePage() {
 
             {quizStep === 2 && (
               <div>
-                <p className="text-xs font-bold text-brand-accent uppercase tracking-widest mb-2">
-                  Step 3 of 3
+                <p className="text-xs font-bold text-brand-accent uppercase tracking-widest mb-2 flex items-center gap-1.5">
+                  <span className="size-1.5 rounded-full bg-brand-accent animate-pulse" /> Step 3 of
+                  3
                 </p>
-                <h3 className="font-display text-xl font-bold text-brand-primary mb-6">
+                <h3 className="font-display text-xl font-bold text-white mb-6 leading-snug">
                   How do you book consultation calls or client appointments?
                 </h3>
-                <div className="space-y-3">
+                <div className="grid gap-3">
                   {[
                     { label: "Back-and-forth emails, calls, or texts", value: "manual" },
                     { label: "We send a link, but write manually to confirm", value: "semiauto" },
@@ -1004,13 +1030,19 @@ function HomePage() {
                       label: "Fully automated self-booking with SMS/Email reminders",
                       value: "auto",
                     },
-                  ].map((opt) => (
+                  ].map((opt, idx) => (
                     <button
                       key={opt.label}
                       onClick={() => handleQuizAnswer(2, opt.value)}
-                      className="w-full text-left p-4 rounded-2xl border border-slate-100 hover:border-brand-accent/30 hover:bg-slate-50/50 transition-colors text-sm font-medium text-slate-700"
+                      className="group w-full flex items-center justify-between p-4 rounded-2xl border border-white/10 bg-white/5 hover:border-brand-accent/50 hover:bg-white/15 transition-all text-left text-sm font-semibold text-slate-200"
                     >
-                      {opt.label}
+                      <div className="flex items-center gap-3">
+                        <span className="grid size-8 shrink-0 place-items-center rounded-xl bg-white/10 text-xs font-bold text-slate-400 group-hover:bg-brand-accent group-hover:text-white transition-colors">
+                          {idx === 0 ? "A" : idx === 1 ? "B" : idx === 2 ? "C" : "D"}
+                        </span>
+                        <span>{opt.label}</span>
+                      </div>
+                      <ArrowRight className="size-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all text-brand-accent shrink-0" />
                     </button>
                   ))}
                 </div>
@@ -1019,28 +1051,29 @@ function HomePage() {
 
             {quizStep === 3 && (
               <div className="text-center py-6">
-                <div className="mx-auto grid size-16 place-items-center rounded-full bg-brand-accent/10 text-brand-accent mb-6">
-                  <TrendingUp className="size-8" />
+                <div className="mx-auto grid size-16 place-items-center rounded-full bg-brand-accent/15 text-brand-accent mb-6 shadow-xl shadow-brand-accent/10">
+                  <Sparkles className="size-8" />
                 </div>
-                <h3 className="font-display text-2xl font-bold text-brand-primary mb-2">
-                  Diagnostic Result: {getQuizScoreLabel()}
+                <h3 className="font-display text-2xl font-bold text-white mb-3">
+                  {getQuizScoreLabel()}
                 </h3>
-                <p className="text-slate-500 text-sm max-w-md mx-auto mb-8 leading-relaxed">
+                <p className="text-slate-300 text-sm max-w-md mx-auto mb-8 leading-relaxed">
                   {getQuizScoreDescription()}
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center gap-3">
                   <a
                     href="/book-consultation"
-                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand-accent px-6 py-3 text-sm font-bold text-white shadow-xl shadow-brand-accent/20 hover:bg-brand-accent/95 transition-transform hover:-translate-y-0.5"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand-accent px-6 py-3.5 text-sm font-bold text-white shadow-xl shadow-brand-accent/20 hover:bg-brand-accent/95 transition-transform hover:-translate-y-0.5"
                   >
                     Claim Free Strategy Blueprint
+                    <ArrowRight className="size-4" />
                   </a>
                   <button
                     onClick={() => {
                       setQuizStep(0);
                       setQuizAnswers([]);
                     }}
-                    className="px-6 py-3 rounded-xl border border-slate-200 bg-white text-sm font-semibold text-slate-600 hover:bg-slate-50 transition-colors"
+                    className="px-6 py-3.5 rounded-xl border border-white/10 bg-white/5 text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/10 transition-colors"
                   >
                     Restart Audit
                   </button>
