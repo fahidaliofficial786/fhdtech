@@ -102,6 +102,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:description", content: SITE_DESC },
       { name: "twitter:image", content: "https://fhdtech.com/favicon.svg" },
       { name: "robots", content: "index, follow" },
+      { name: "google-site-verification", content: "TIduYcPBN-HzvBfSB3Ndy4UAF7Qv07xPvdNrnxpJiRU" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -142,6 +143,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             "https://t.me/Fahidaliofficial",
           ],
         }),
+      },
+      {
+        type: "text/javascript",
+        children: `(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "xjetlhjxwq");`,
       },
     ],
   }),
