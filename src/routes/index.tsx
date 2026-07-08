@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -241,6 +242,42 @@ const CASE_STUDIES = [
 ];
 
 function HomePage() {
+  const [manualHours, setManualHours] = useState(15);
+  const [hourlyRate, setHourlyRate] = useState(30);
+  const [lostLeads, setLostLeads] = useState(5);
+
+  const [activeScenario, setActiveScenario] = useState("response");
+
+  const [quizStep, setQuizStep] = useState(0);
+  const [quizAnswers, setQuizAnswers] = useState<string[]>([]);
+
+  const handleQuizAnswer = (step: number, val: string) => {
+    const updated = [...quizAnswers];
+    updated[step] = val;
+    setQuizAnswers(updated);
+    setQuizStep(step + 1);
+  };
+
+  const getQuizScoreLabel = () => {
+    const slowRep = quizAnswers[0] === "slow" || quizAnswers[0] === "none";
+    const lowCrm = quizAnswers[1] === "sheets" || quizAnswers[1] === "none";
+    if (slowRep && lowCrm) return "Urgent Action Required 🚨";
+    if (slowRep || lowCrm) return "Operational Bottlenecks Detected ⚠️";
+    return "Optimized Core - Ready for Scaling 🚀";
+  };
+
+  const getQuizScoreDescription = () => {
+    const slowRep = quizAnswers[0] === "slow" || quizAnswers[0] === "none";
+    const lowCrm = quizAnswers[1] === "sheets" || quizAnswers[1] === "none";
+    if (slowRep && lowCrm) {
+      return "Slow lead responses and scattered tracking are costing you up to 45% of potential client conversions. You need a centralized CRM snapshot and automated speed-to-lead routing immediately.";
+    }
+    if (slowRep || lowCrm) {
+      return "You have a solid base, but manually managing follow-ups or sync processes is stalling your growth. Automating calendar schedules and CRM workflows will reclaim 10+ hours per week.";
+    }
+    return "Your tech stack is aligned! To take operations to the next level, we recommend implementing conversational AI voice agents for automated pre-qualifications.";
+  };
+
   return (
     <div className="bg-white">
       {/* HERO */}
@@ -390,6 +427,122 @@ function HomePage() {
         </div>
       </section>
 
+      {/* SECTION: INTERACTIVE ROI CALCULATOR */}
+      <section className="px-6 py-24 bg-gradient-to-b from-white to-slate-50 border-t border-slate-100">
+        <div className="mx-auto max-w-6xl">
+          <div className="text-center mb-14">
+            <span className="mb-3 inline-flex rounded-full bg-brand-accent/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-accent">
+              ROI Calculator
+            </span>
+            <h2 className="font-display text-3xl font-bold text-brand-primary md:text-4xl">
+              Calculate Your Automation Savings
+            </h2>
+            <p className="mt-4 text-slate-500 max-w-xl mx-auto">
+              See how much time and money you can save annually by automating repetitive workflows
+              with FHDTech.
+            </p>
+          </div>
+
+          <div className="grid gap-8 lg:grid-cols-12 items-center bg-white rounded-3xl border border-slate-100 p-8 shadow-xl shadow-slate-100/45">
+            {/* Inputs */}
+            <div className="lg:col-span-7 space-y-6">
+              <div>
+                <label className="flex justify-between text-sm font-semibold text-slate-700 mb-2">
+                  <span>Weekly manual staff hours spent on CRM/Admin:</span>
+                  <span className="text-brand-accent font-bold">{manualHours} Hours</span>
+                </label>
+                <input
+                  type="range"
+                  min="5"
+                  max="40"
+                  step="5"
+                  value={manualHours}
+                  onChange={(e) => setManualHours(Number(e.target.value))}
+                  className="w-full h-2 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-brand-accent"
+                />
+              </div>
+
+              <div>
+                <label className="flex justify-between text-sm font-semibold text-slate-700 mb-2">
+                  <span>Average staff hourly rate ($):</span>
+                  <span className="text-brand-accent font-bold">${hourlyRate}/hr</span>
+                </label>
+                <input
+                  type="range"
+                  min="15"
+                  max="100"
+                  step="5"
+                  value={hourlyRate}
+                  onChange={(e) => setHourlyRate(Number(e.target.value))}
+                  className="w-full h-2 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-brand-accent"
+                />
+              </div>
+
+              <div>
+                <label className="flex justify-between text-sm font-semibold text-slate-700 mb-2">
+                  <span>Estimated monthly leads lost to slow response:</span>
+                  <span className="text-brand-accent font-bold">{lostLeads} Leads</span>
+                </label>
+                <input
+                  type="range"
+                  min="2"
+                  max="30"
+                  step="1"
+                  value={lostLeads}
+                  onChange={(e) => setLostLeads(Number(e.target.value))}
+                  className="w-full h-2 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-brand-accent"
+                />
+              </div>
+            </div>
+
+            {/* Outputs */}
+            <div className="lg:col-span-5 bg-gradient-to-br from-brand-primary to-slate-900 text-white rounded-2xl p-6 lg:p-8 flex flex-col justify-between h-full relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-brand-accent/10 rounded-full blur-xl pointer-events-none" />
+              <div className="space-y-6">
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-widest text-slate-400">
+                    Annual Hours Saved
+                  </p>
+                  <p className="font-display text-4xl font-extrabold text-white mt-1">
+                    {(manualHours * 0.75 * 52).toFixed(0)}{" "}
+                    <span className="text-sm font-normal text-slate-400">hours</span>
+                  </p>
+                </div>
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-widest text-slate-400">
+                    Annual Admin Cost Recovered
+                  </p>
+                  <p className="font-display text-4xl font-extrabold text-brand-accent mt-1">
+                    $
+                    {(manualHours * 0.75 * hourlyRate * 52).toLocaleString(undefined, {
+                      maximumFractionDigits: 0,
+                    })}
+                  </p>
+                </div>
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-widest text-slate-400">
+                    Est. Added Lead Revenue (Yearly)
+                  </p>
+                  <p className="font-display text-3xl font-extrabold text-emerald-400 mt-1">
+                    $
+                    {(lostLeads * 12 * 350).toLocaleString(undefined, { maximumFractionDigits: 0 })}
+                  </p>
+                  <p className="text-[10px] text-slate-400 mt-1">
+                    *Assumes average lead contract value of $350
+                  </p>
+                </div>
+              </div>
+              <a
+                href="/book-consultation"
+                className="mt-8 w-full text-center bg-brand-accent hover:bg-brand-accent/90 text-white font-bold py-3 px-4 rounded-xl text-sm transition-transform hover:-translate-y-0.5"
+              >
+                Claim Your Savings Now
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* METRICS — verified from portfolio.fhdtech.com */}
       <section className="bg-brand-primary py-20">
         <div className="mx-auto max-w-6xl px-6">
@@ -444,6 +597,223 @@ function HomePage() {
                 <p className="mt-3 text-sm text-slate-500">{p.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION: AI SPEED-TO-LEAD SIMULATOR */}
+      <section className="px-6 py-24 bg-white border-t border-slate-100">
+        <div className="mx-auto max-w-6xl">
+          <div className="text-center mb-14">
+            <span className="mb-3 inline-flex rounded-full bg-brand-accent/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-accent">
+              Live Comparison
+            </span>
+            <h2 className="font-display text-3xl font-bold text-brand-primary md:text-4xl">
+              Manual Response vs. FHDTech Automation
+            </h2>
+            <p className="mt-4 text-slate-500 max-w-xl mx-auto">
+              Interactive scenario simulator. Click the tabs below to see how standard businesses
+              handle operations versus an automated agency setup.
+            </p>
+
+            <div className="mt-8 flex justify-center gap-2 flex-wrap">
+              {[
+                { id: "response", label: "Lead Response Speed" },
+                { id: "nurturing", label: "Follow-up Consistency" },
+                { id: "datasync", label: "CRM & Calendar Sync" },
+              ].map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveScenario(tab.id)}
+                  className={`px-4 py-2 text-xs font-bold rounded-full transition-colors ${
+                    activeScenario === tab.id
+                      ? "bg-brand-primary text-white"
+                      : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2">
+            {/* Manual Card */}
+            <div className="rounded-3xl border border-slate-100 bg-slate-50/50 p-8 flex flex-col justify-between relative overflow-hidden">
+              <div className="absolute top-4 right-6 text-red-500/20 font-display text-5xl font-black uppercase">
+                Slow
+              </div>
+              <div>
+                <span className="inline-flex rounded-full bg-red-100 px-3 py-1 text-xs font-bold text-red-700 mb-4">
+                  Manual Operations (Typical Setup)
+                </span>
+                <h3 className="font-display text-xl font-bold text-brand-primary">
+                  The Lead Leakage Scenario
+                </h3>
+
+                <div className="mt-6 space-y-4 min-h-[140px]">
+                  {activeScenario === "response" && (
+                    <>
+                      <div className="flex items-start gap-3">
+                        <span className="text-sm font-semibold text-slate-400">9:00 PM:</span>
+                        <p className="text-sm text-slate-600">
+                          Client submits request on website. Staff is off-duty.
+                        </p>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="text-sm font-semibold text-slate-400">9:05 PM:</span>
+                        <p className="text-sm text-slate-600">
+                          Client waits, then leaves website to contact 3 competitors.
+                        </p>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="text-sm font-semibold text-slate-400">Next AM:</span>
+                        <p className="text-sm text-slate-600 font-medium text-red-600">
+                          Staff calls back. Customer says they already booked elsewhere.
+                        </p>
+                      </div>
+                    </>
+                  )}
+                  {activeScenario === "nurturing" && (
+                    <>
+                      <div className="flex items-start gap-3">
+                        <span className="text-sm font-semibold text-slate-400">Day 1:</span>
+                        <p className="text-sm text-slate-600">
+                          Manual follow-up email sent. No reply.
+                        </p>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="text-sm font-semibold text-slate-400">Day 3:</span>
+                        <p className="text-sm text-slate-600">
+                          Busy schedules prevent follow-up call. Lead forgotten.
+                        </p>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="text-sm font-semibold text-slate-400">Result:</span>
+                        <p className="text-sm text-slate-600 font-medium text-red-600">
+                          80% of sales require 5+ follow-ups. Lead remains cold.
+                        </p>
+                      </div>
+                    </>
+                  )}
+                  {activeScenario === "datasync" && (
+                    <>
+                      <div className="flex items-start gap-3">
+                        <span className="text-sm font-semibold text-slate-400">Step 1:</span>
+                        <p className="text-sm text-slate-600">
+                          Customer calls. Details written on note card or basic sheet.
+                        </p>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="text-sm font-semibold text-slate-400">Step 2:</span>
+                        <p className="text-sm text-slate-600">
+                          Staff manually types contact details into separate systems.
+                        </p>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="text-sm font-semibold text-slate-400">Errors:</span>
+                        <p className="text-sm text-slate-600 font-medium text-red-600">
+                          Typos, lost cards, unsynced calendars, double bookings.
+                        </p>
+                      </div>
+                    </>
+                  )}
+                </div>
+              </div>
+              <div className="mt-8 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-semibold">
+                <span>Avg. Response: 12 Hours</span>
+                <span className="text-red-500">Conversion Leak: ~45%</span>
+              </div>
+            </div>
+
+            {/* Automated Card */}
+            <div className="rounded-3xl border border-brand-accent/20 bg-slate-900 text-white p-8 flex flex-col justify-between relative overflow-hidden shadow-xl shadow-brand-accent/5">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-brand-accent/15 rounded-full blur-2xl pointer-events-none" />
+              <div className="absolute top-4 right-6 text-brand-accent/25 font-display text-5xl font-black uppercase">
+                Fast
+              </div>
+              <div>
+                <span className="inline-flex rounded-full bg-brand-accent/20 px-3 py-1 text-xs font-bold text-brand-accent mb-4">
+                  Automated Operations (FHDTech Setup)
+                </span>
+                <h3 className="font-display text-xl font-bold text-white">
+                  The Speed-to-Lead Edge
+                </h3>
+
+                <div className="mt-6 space-y-4 min-h-[140px]">
+                  {activeScenario === "response" && (
+                    <>
+                      <div className="flex items-start gap-3">
+                        <span className="text-sm font-semibold text-brand-accent">9:00 PM:</span>
+                        <p className="text-sm text-slate-300">
+                          Client submits request. AI voice agent / SMS triggers in 45 seconds.
+                        </p>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="text-sm font-semibold text-brand-accent">9:02 PM:</span>
+                        <p className="text-sm text-slate-300">
+                          Conversational AI answers FAQ, pre-qualifies, sends booking link.
+                        </p>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="text-sm font-semibold text-brand-accent">9:05 PM:</span>
+                        <p className="text-sm text-slate-100 font-medium text-emerald-400">
+                          Appointment booked. CRM updated. Staff receives Slack alert.
+                        </p>
+                      </div>
+                    </>
+                  )}
+                  {activeScenario === "nurturing" && (
+                    <>
+                      <div className="flex items-start gap-3">
+                        <span className="text-sm font-semibold text-brand-accent">Day 1:</span>
+                        <p className="text-sm text-slate-300">
+                          Automated SMS sent. User replies. AI responds to user's question.
+                        </p>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="text-sm font-semibold text-brand-accent">Day 3:</span>
+                        <p className="text-sm text-slate-300">
+                          Dynamic GHL email campaign follow-up showing case study video.
+                        </p>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="text-sm font-semibold text-brand-accent">Result:</span>
+                        <p className="text-sm text-slate-100 font-medium text-emerald-400">
+                          Automated follow-ups run consistently for 30 days until booking.
+                        </p>
+                      </div>
+                    </>
+                  )}
+                  {activeScenario === "datasync" && (
+                    <>
+                      <div className="flex items-start gap-3">
+                        <span className="text-sm font-semibold text-brand-accent">Step 1:</span>
+                        <p className="text-sm text-slate-300">
+                          Lead captures from ads, site, or phone are instantly synced.
+                        </p>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="text-sm font-semibold text-brand-accent">Step 2:</span>
+                        <p className="text-sm text-slate-300">
+                          Zapier/Make pushes contact data to Stripe, Google Sheets, & slack.
+                        </p>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="text-sm font-semibold text-brand-accent">Status:</span>
+                        <p className="text-sm text-slate-100 font-medium text-emerald-400">
+                          0% manual data entry. Zero human syncing errors.
+                        </p>
+                      </div>
+                    </>
+                  )}
+                </div>
+              </div>
+              <div className="mt-8 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-slate-400 font-semibold">
+                <span>Avg. Response: Under 1 Min</span>
+                <span className="text-emerald-400">Conversion Rate Lift: +30%</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -537,6 +907,147 @@ function HomePage() {
               Browse 130+ Fiverr reviews &rarr;
             </a>
           </p>
+        </div>
+      </section>
+
+      {/* SECTION: SYSTEM SCALE DIAGNOSTIC */}
+      <section className="px-6 py-24 bg-gradient-to-b from-white to-slate-50 border-t border-slate-100">
+        <div className="mx-auto max-w-3xl">
+          <div className="text-center mb-10">
+            <span className="mb-3 inline-flex rounded-full bg-brand-accent/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-accent">
+              Systems Audit
+            </span>
+            <h2 className="font-display text-3xl font-bold text-brand-primary md:text-4xl">
+              Is Your Business Ready to Scale?
+            </h2>
+            <p className="mt-4 text-slate-500">
+              Take this 3-step rapid systems diagnostic quiz to evaluate your lead processing
+              efficiency.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-3xl border border-slate-100 p-8 shadow-xl shadow-slate-100/40 min-h-[360px] flex flex-col justify-between">
+            {quizStep === 0 && (
+              <div>
+                <p className="text-xs font-bold text-brand-accent uppercase tracking-widest mb-2">
+                  Step 1 of 3
+                </p>
+                <h3 className="font-display text-xl font-bold text-brand-primary mb-6">
+                  How fast do you respond to new website/ad leads?
+                </h3>
+                <div className="space-y-3">
+                  {[
+                    { label: "Within 5 minutes", value: "fast" },
+                    { label: "Between 1 to 2 hours", value: "medium" },
+                    { label: "Next business day", value: "slow" },
+                    { label: "We struggle to call them back", value: "none" },
+                  ].map((opt) => (
+                    <button
+                      key={opt.label}
+                      onClick={() => handleQuizAnswer(0, opt.value)}
+                      className="w-full text-left p-4 rounded-2xl border border-slate-100 hover:border-brand-accent/30 hover:bg-slate-50/50 transition-colors text-sm font-medium text-slate-700"
+                    >
+                      {opt.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {quizStep === 1 && (
+              <div>
+                <p className="text-xs font-bold text-brand-accent uppercase tracking-widest mb-2">
+                  Step 2 of 3
+                </p>
+                <h3 className="font-display text-xl font-bold text-brand-primary mb-6">
+                  How are your leads stored and tracked?
+                </h3>
+                <div className="space-y-3">
+                  {[
+                    { label: "Sticky notes, diaries, or scattered Google Sheets", value: "sheets" },
+                    {
+                      label: "A basic CRM (HubSpot free, etc.) but we barely use it",
+                      value: "crm_low",
+                    },
+                    { label: "No unified database, they remain in email inboxes", value: "none" },
+                    { label: "Fully automated pipelines inside GoHighLevel", value: "ghl" },
+                  ].map((opt) => (
+                    <button
+                      key={opt.label}
+                      onClick={() => handleQuizAnswer(1, opt.value)}
+                      className="w-full text-left p-4 rounded-2xl border border-slate-100 hover:border-brand-accent/30 hover:bg-slate-50/50 transition-colors text-sm font-medium text-slate-700"
+                    >
+                      {opt.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {quizStep === 2 && (
+              <div>
+                <p className="text-xs font-bold text-brand-accent uppercase tracking-widest mb-2">
+                  Step 3 of 3
+                </p>
+                <h3 className="font-display text-xl font-bold text-brand-primary mb-6">
+                  How do you book consultation calls or client appointments?
+                </h3>
+                <div className="space-y-3">
+                  {[
+                    { label: "Back-and-forth emails, calls, or texts", value: "manual" },
+                    { label: "We send a link, but write manually to confirm", value: "semiauto" },
+                    {
+                      label: "Clients book themselves, but we have high no-shows",
+                      value: "noshow",
+                    },
+                    {
+                      label: "Fully automated self-booking with SMS/Email reminders",
+                      value: "auto",
+                    },
+                  ].map((opt) => (
+                    <button
+                      key={opt.label}
+                      onClick={() => handleQuizAnswer(2, opt.value)}
+                      className="w-full text-left p-4 rounded-2xl border border-slate-100 hover:border-brand-accent/30 hover:bg-slate-50/50 transition-colors text-sm font-medium text-slate-700"
+                    >
+                      {opt.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {quizStep === 3 && (
+              <div className="text-center py-6">
+                <div className="mx-auto grid size-16 place-items-center rounded-full bg-brand-accent/10 text-brand-accent mb-6">
+                  <TrendingUp className="size-8" />
+                </div>
+                <h3 className="font-display text-2xl font-bold text-brand-primary mb-2">
+                  Diagnostic Result: {getQuizScoreLabel()}
+                </h3>
+                <p className="text-slate-500 text-sm max-w-md mx-auto mb-8 leading-relaxed">
+                  {getQuizScoreDescription()}
+                </p>
+                <div className="flex flex-col sm:flex-row justify-center gap-3">
+                  <a
+                    href="/book-consultation"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand-accent px-6 py-3 text-sm font-bold text-white shadow-xl shadow-brand-accent/20 hover:bg-brand-accent/95 transition-transform hover:-translate-y-0.5"
+                  >
+                    Claim Free Strategy Blueprint
+                  </a>
+                  <button
+                    onClick={() => {
+                      setQuizStep(0);
+                      setQuizAnswers([]);
+                    }}
+                    className="px-6 py-3 rounded-xl border border-slate-200 bg-white text-sm font-semibold text-slate-600 hover:bg-slate-50 transition-colors"
+                  >
+                    Restart Audit
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </section>
 
