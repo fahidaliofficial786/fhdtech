@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ChevronRight, Globe, Network, Sparkles } from "lucide-react";
+import { ChevronRight, Globe, Network, Sparkles, BookOpen } from "lucide-react";
 import { SERVICE_CATEGORIES } from "@/lib/services";
 
 export const Route = createFileRoute("/sitemap")({
@@ -98,7 +98,7 @@ function SitemapPage() {
         </div>
       </section>
 
-      <section className="px-6 pb-24">
+      <section className="px-6 pb-16">
         <div className="mx-auto max-w-6xl grid gap-10 md:grid-cols-3">
           {/* Main Pages */}
           <div className="rounded-2xl border border-slate-100 bg-slate-50/50 p-6">
@@ -162,6 +162,53 @@ function SitemapPage() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Blog Guides section */}
+      <section className="px-6 pb-24 border-t border-slate-100 pt-16">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="font-display text-xl font-bold text-brand-primary mb-6 flex items-center gap-2 border-b border-slate-100 pb-3">
+            <BookOpen className="size-5 text-brand-accent" /> Growth Playbooks &amp; Guides
+          </h2>
+          <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+            {[
+              {
+                slug: "14-day-gohighlevel-deployment-playbook",
+                title: "14-day GoHighLevel deployment playbook",
+              },
+              {
+                slug: "ai-voice-agents-vs-human-answering-services",
+                title: "AI voice agents vs. human answering services ROI",
+              },
+              {
+                slug: "llm-seo-rank-chatgpt-perplexity-google-ai",
+                title: "LLM SEO: rank inside ChatGPT, Perplexity & Google AI",
+              },
+              {
+                slug: "gbp-ranking-factors-2026",
+                title: "GBP ranking factors: what moves Google Map pack",
+              },
+              {
+                slug: "missed-call-text-back-highest-roi",
+                title: "Missed-call text back setup & compliance guide",
+              },
+              {
+                slug: "pipeline-design-service-businesses",
+                title: "Pipeline design: 7 stages, 3 automations, zero leaks",
+              },
+            ].map((post) => (
+              <Link
+                key={post.slug}
+                to="/blog/$slug"
+                params={{ slug: post.slug }}
+                className="text-sm text-slate-600 hover:text-brand-accent transition-colors font-medium flex items-center gap-1.5 p-3 rounded-xl border border-slate-100 hover:bg-slate-50/50"
+              >
+                <ChevronRight className="size-3.5 opacity-60 text-brand-accent shrink-0" />
+                <span>{post.title}</span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

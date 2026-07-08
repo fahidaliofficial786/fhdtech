@@ -100,6 +100,7 @@ const CATEGORIES = [
 
 const POSTS = [
   {
+    slug: "14-day-gohighlevel-deployment-playbook",
     cat: "GoHighLevel",
     title: "The 14-day GoHighLevel deployment playbook we use for every client",
     excerpt:
@@ -107,6 +108,7 @@ const POSTS = [
     read: "9 min",
   },
   {
+    slug: "ai-voice-agents-vs-human-answering-services",
     cat: "AI Automation",
     title: "AI voice agents vs. human answering services: the honest ROI breakdown",
     excerpt:
@@ -114,6 +116,7 @@ const POSTS = [
     read: "7 min",
   },
   {
+    slug: "llm-seo-rank-chatgpt-perplexity-google-ai",
     cat: "SEO",
     title: "LLM SEO: how to rank inside ChatGPT, Perplexity, and Google AI Overviews",
     excerpt:
@@ -121,6 +124,7 @@ const POSTS = [
     read: "12 min",
   },
   {
+    slug: "gbp-ranking-factors-2026",
     cat: "Google Business Profile",
     title: "GBP ranking factors in 2026: what actually moves the map pack",
     excerpt:
@@ -128,6 +132,7 @@ const POSTS = [
     read: "10 min",
   },
   {
+    slug: "missed-call-text-back-highest-roi",
     cat: "Lead Generation",
     title: "Missed-call text back is still the highest-ROI automation you can install today",
     excerpt:
@@ -135,6 +140,7 @@ const POSTS = [
     read: "6 min",
   },
   {
+    slug: "pipeline-design-service-businesses",
     cat: "CRM",
     title: "Pipeline design for service businesses: 7 stages, 3 automations, zero leaks",
     excerpt:
@@ -187,10 +193,12 @@ function BlogPage() {
 
       <section className="px-6 pb-24">
         <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {POSTS.map((p, i) => (
-            <article
-              key={i}
-              className="group flex flex-col rounded-2xl border border-slate-100 bg-white p-8 transition-all hover:-translate-y-1 hover:border-brand-accent/30 hover:shadow-xl hover:shadow-brand-accent/5"
+          {POSTS.map((p) => (
+            <Link
+              key={p.slug}
+              to="/blog/$slug"
+              params={{ slug: p.slug }}
+              className="group flex flex-col rounded-2xl border border-slate-100 bg-white p-8 transition-all hover:-translate-y-1 hover:border-brand-accent/30 hover:shadow-xl hover:shadow-brand-accent/5 cursor-pointer"
             >
               <div className="flex items-center justify-between text-xs">
                 <span className="rounded-full bg-brand-accent/10 px-3 py-1 font-bold uppercase tracking-wider text-brand-accent">
@@ -207,7 +215,7 @@ function BlogPage() {
               <span className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-brand-accent">
                 Read guide <ArrowRight className="size-4" />
               </span>
-            </article>
+            </Link>
           ))}
         </div>
       </section>
