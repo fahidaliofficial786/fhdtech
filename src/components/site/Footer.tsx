@@ -316,9 +316,15 @@ export function SiteFooter() {
             <Link to="/terms" className="hover:text-white">
               Terms & Conditions
             </Link>
-            <a href="/sitemap.xml" className="hover:text-white">
+            <Link to="/disclaimer" className="hover:text-white">
+              Disclaimer
+            </Link>
+            <Link to="/refund" className="hover:text-white">
+              Refund Policy
+            </Link>
+            <Link to="/sitemap" className="hover:text-white">
               Sitemap
-            </a>
+            </Link>
             <a
               href={BUSINESS.portfolio}
               target="_blank"

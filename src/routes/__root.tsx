@@ -14,6 +14,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader } from "../components/site/Header";
 import { SiteFooter } from "../components/site/Footer";
 import { FloatingCTA } from "../components/site/FloatingCTA";
+import { CookieBanner } from "../components/site/CookieBanner";
 
 const SITE_NAME = "FHDTech";
 const SITE_DESC =
@@ -186,6 +187,7 @@ function RootComponent() {
         </main>
         <SiteFooter />
         <FloatingCTA />
+        <CookieBanner />
       </div>
     </QueryClientProvider>
   );

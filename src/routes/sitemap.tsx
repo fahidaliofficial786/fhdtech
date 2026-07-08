@@ -65,6 +65,8 @@ function SitemapPage() {
     { label: "AI Scraping Rules (ai.txt)", path: "/ai.txt" },
     { label: "Privacy Policy", path: "/privacy" },
     { label: "Terms & Conditions", path: "/terms" },
+    { label: "Disclaimer Policy", path: "/disclaimer" },
+    { label: "Refund & Cancellation Policy", path: "/refund" },
   ];
 
   return (
