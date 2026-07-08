@@ -13,6 +13,14 @@ import { SERVICE_MAP, SERVICES, type Service } from "@/lib/services";
 import { BUSINESS } from "@/lib/business";
 import { FaqAccordion } from "@/components/site/FaqAccordion";
 
+// Custom premium service page overrides
+import GoHighLevelCRMSetup from "@/components/services/GoHighLevelCRMSetup";
+import WordPressMalwareRemoval from "@/components/services/WordPressMalwareRemoval";
+import AIAutomation from "@/components/services/AIAutomation";
+import GoogleBusinessProfile from "@/components/services/GoogleBusinessProfile";
+import PaidAdsManagement from "@/components/services/PaidAdsManagement";
+import WordPressDevelopment from "@/components/services/WordPressDevelopment";
+
 export const Route = createFileRoute("/services/$slug")({
   loader: ({ params }) => {
     const service = SERVICE_MAP[params.slug];
@@ -112,6 +120,26 @@ function NotFound() {
 
 function ServiceDetailPage() {
   const { service: s } = Route.useLoaderData() as { service: Service };
+
+  if (s.slug === "gohighlevel-crm-setup") {
+    return <GoHighLevelCRMSetup />;
+  }
+  if (s.slug === "wordpress-malware-removal") {
+    return <WordPressMalwareRemoval />;
+  }
+  if (s.slug === "ai-automation") {
+    return <AIAutomation />;
+  }
+  if (s.slug === "google-business-profile-optimization") {
+    return <GoogleBusinessProfile />;
+  }
+  if (s.slug === "google-ads-management") {
+    return <PaidAdsManagement />;
+  }
+  if (s.slug === "wordpress-development") {
+    return <WordPressDevelopment />;
+  }
+
   const related = s.related
     .map((slug) => SERVICE_MAP[slug])
     .filter((r): r is Service => Boolean(r));
