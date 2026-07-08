@@ -31,6 +31,7 @@ import AIAutomation from "@/components/services/AIAutomation";
 import GoogleBusinessProfile from "@/components/services/GoogleBusinessProfile";
 import PaidAdsManagement from "@/components/services/PaidAdsManagement";
 import WordPressDevelopment from "@/components/services/WordPressDevelopment";
+import SEO from "@/components/services/SEO";
 
 export const Route = createFileRoute("/services/$slug")({
   loader: ({ params }) => {
@@ -149,6 +150,9 @@ function ServiceDetailPage() {
   }
   if (s.slug === "wordpress-development") {
     return <WordPressDevelopment />;
+  }
+  if (s.slug === "seo") {
+    return <SEO />;
   }
 
   const related = s.related

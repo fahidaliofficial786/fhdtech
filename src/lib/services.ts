@@ -1669,6 +1669,86 @@ export const SERVICES: Service[] = [
 
   // ============================= SEO =============================
   {
+    slug: "seo",
+    title: "Search Engine Optimization (SEO)",
+    category: "SEO",
+    short: "On-page, technical, local, and authority SEO that generates inbound calls.",
+    hero: {
+      kicker: "SEO Sprints",
+      headline: "Rank higher, get calls, and dominate search results.",
+      sub: "A complete SEO overhaul — keyword research, on-page optimization, local map rankings, and technical crawl fixes built to drive leads, not just traffic.",
+    },
+    problems: [
+      "Your website gets zero organic traffic and you rely entirely on paid ads.",
+      "Competitors rank higher for all commercial keywords in your city.",
+      "Your Google Business Profile is invisible in the local map pack.",
+    ],
+    solution:
+      "A complete multi-channel SEO sprint: keyword opportunity audits, on-page content structures, schemas configurations, map optimization, backlink cleanups, and ranking tracking setup.",
+    features: [
+      "Keyword & competitor gap audits",
+      "On-page heading & meta optimizations",
+      "Local map pack rank optimization",
+      "Technical crawl & canonical strategy fixes",
+      "Structured Schema graph integration",
+      "Monthly keyword ranking & GA4 traffic tracking reports",
+      "60-day target search indexation guarantee",
+    ],
+    benefits: [
+      {
+        title: "More Inbound Calls",
+        desc: "Ranking in the local map pack captures customers ready to buy immediately.",
+      },
+      {
+        title: "Lower Customer Acquisition Costs",
+        desc: "Unlike paid ads, organic search traffic doesn't cost you per click.",
+      },
+      {
+        title: "Permanent Brand Authority",
+        desc: "Once you rank, you stay top-of-mind for your service category in your area.",
+      },
+    ],
+    process: [
+      {
+        step: "Comprehensive Audit",
+        desc: "Keyword gaps, competitor reviews, crawl issues, and rankings audit.",
+      },
+      {
+        step: "On-Page & Schema fixes",
+        desc: "Optimize meta tags, heading hierarchies, speed, and schema graphs.",
+      },
+      {
+        step: "Local Map optimization",
+        desc: "Match NAP profiles across sitemaps, build listings, and optimize profiles.",
+      },
+      {
+        step: "Tracking & Reports",
+        desc: "Configure GA4 conversions, setup ranking tracking, launch monthly dashboards.",
+      },
+    ],
+    faqs: [
+      {
+        q: "How long does it take to see SEO results?",
+        a: "SEO is a medium-term strategy. While technical and on-page fixes can lead to indexation boosts in 2-4 weeks, competitive rankings usually take 3-6 months.",
+      },
+      {
+        q: "Do you guarantee #1 rankings?",
+        a: "No professional SEO agency guarantees #1 spots as search algorithms change daily. We guarantee best practices, structural setups, and ranking growth metrics.",
+      },
+      {
+        q: "What tools do you use for tracking?",
+        a: "We use GA4, Google Search Console, Ahrefs, SEMrush, and Local Falcon to track rankings and organic traffic growth.",
+      },
+    ],
+    industries: ALL_INDUSTRIES,
+    related: ["technical-seo", "on-page-seo", "local-seo", "google-business-profile-optimization"],
+    seo: {
+      title: "Search Engine Optimization (SEO) Services | FHDTech",
+      description:
+        "High-performance organic search engine optimization: technical audits, local maps packs, on-page optimization, and ranking tracking.",
+    },
+  },
+  {
     slug: "technical-seo",
     title: "Technical SEO",
     category: "SEO",
