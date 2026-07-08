@@ -133,7 +133,7 @@ function ServiceDetailPage() {
   if (s.slug === "google-business-profile-optimization") {
     return <GoogleBusinessProfile />;
   }
-  if (s.slug === "google-ads-management") {
+  if (s.slug === "paid-ads-management") {
     return <PaidAdsManagement />;
   }
   if (s.slug === "wordpress-development") {

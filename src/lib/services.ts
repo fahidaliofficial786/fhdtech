@@ -1392,7 +1392,7 @@ export const SERVICES: Service[] = [
     ],
     related: [
       "business-websites",
-      "google-ads-management",
+      "paid-ads-management",
       "facebook-ads-management",
       "lead-generation",
     ],
@@ -2215,8 +2215,8 @@ export const SERVICES: Service[] = [
 
   // ============================= PAID ADS / LEAD GEN =============================
   {
-    slug: "google-ads-management",
-    title: "Google Ads Management",
+    slug: "paid-ads-management",
+    title: "Paid Ads Management",
     category: "Paid Advertising",
     short: "Search, LSA, and Performance Max campaigns that book calls.",
     hero: {
@@ -2341,7 +2341,7 @@ export const SERVICES: Service[] = [
     ],
     related: [
       "instagram-ads-management",
-      "google-ads-management",
+      "paid-ads-management",
       "landing-page-development",
       "lead-generation",
     ],
@@ -2409,7 +2409,7 @@ export const SERVICES: Service[] = [
     ],
     related: [
       "facebook-ads-management",
-      "google-ads-management",
+      "paid-ads-management",
       "landing-page-development",
       "ai-chatbots",
     ],
@@ -2476,7 +2476,7 @@ export const SERVICES: Service[] = [
       },
     ],
     related: [
-      "google-ads-management",
+      "paid-ads-management",
       "facebook-ads-management",
       "landing-page-development",
       "lead-management",
@@ -2848,6 +2848,7 @@ const SERVICE_ALIASES: Record<string, string> = {
   "hvac-crm-setup": "hvac-crm",
   "wordpress-website-development": "wordpress-development",
   "appointment-booking-systems": "appointment-booking",
+  "google-ads-management": "paid-ads-management",
 };
 
 export const SERVICE_MAP = {
