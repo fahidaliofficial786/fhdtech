@@ -3,11 +3,11 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/terms")({
   head: () => ({
     meta: [
-      { title: "Terms & Conditions | FHDTech" },
+      { title: "Enterprise Terms & Conditions | FHDTech" },
       {
         name: "description",
         content:
-          "Terms of engagement for FHDTech services, project agreements, billing milestones, and user responsibilities.",
+          "Enterprise Terms of Service for FHDTech. Detailed terms on project milestones, payments, liability, and governance.",
       },
       { name: "robots", content: "noindex, nofollow" },
     ],
@@ -22,182 +22,230 @@ function TermsPage() {
       <h1 className="font-display text-4xl font-bold text-brand-primary">Terms & Conditions</h1>
       <p className="mt-4 text-sm text-slate-500">Last updated: 8 July 2026</p>
 
-      <div className="prose prose-slate mt-10 max-w-none text-slate-600 space-y-6">
-        <p className="lead text-lg text-slate-500 font-medium">
-          Welcome to fhdtech.com. These Terms & Conditions (“Terms”) govern your access to and use
-          of our website and our services, including GoHighLevel CRM setup, AI automation systems,
-          WordPress development, and security services provided by FHDTech (“FHDTech”, “we”, “us”,
-          “our”), led by Fahid Ali.
+      <div className="prose prose-slate mt-10 max-w-none text-slate-600 space-y-8">
+        <p className="lead text-lg text-slate-500 font-medium border-l-4 border-brand-accent pl-4">
+          These Terms & Conditions (“Terms”) govern your relationship with FHDTech (“FHDTech”, “we”,
+          “us”, “our”) and define the rules for using our services, snapshots, custom codes, and
+          consulting integrations.
         </p>
 
-        <hr className="border-slate-100 my-8" />
-
         <section>
-          <h2 className="font-display text-2xl font-bold text-brand-primary mt-6 mb-3">
-            1. Engagement and Service Scope
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            1. Acceptance of Terms
           </h2>
           <p>
-            We provide custom systems integration, GoHighLevel sub-account builds, custom workflow
-            triggers, AI chatbots, local search marketing (SEO), and WordPress malware cleaning
-            services. Each client engagement is defined by a separate written proposal, estimate, or
-            contract (the "Agreement") outlining:
+            By browsing our website or signing our work estimates, you confirm that you accept these
+            Terms and agree to be bound by them. If you disagree with any section, you must cease
+            website access immediately.
           </p>
-          <ul className="list-disc pl-5 space-y-2 mt-2">
-            <li>Specific deliverables, scope of configurations, and timelines.</li>
-            <li>API credentials requirements, server accesses, and client inputs.</li>
-            <li>Retainer parameters or one-off project milestones.</li>
-          </ul>
         </section>
 
         <section>
-          <h2 className="font-display text-2xl font-bold text-brand-primary mt-6 mb-3">
-            2. Client Obligations and Access
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            2. Description of Technical Services
           </h2>
           <p>
-            To successfully deliver builds within agreed timelines (such as our 14-day GHL CRM setup
-            sprint), you agree to provide:
+            FHDTech offers GoHighLevel (GHL) CRM design, custom API integrations via Make/Zapier, AI
+            conversational chatbots, local maps ranking, WordPress recovery, and specialized website
+            malware extraction.
           </p>
-          <ul className="list-disc pl-5 space-y-2 mt-2">
-            <li>
-              Timely access to GoHighLevel accounts, Twilio credentials, domain registrars, hosting
-              panels, and API keys.
-            </li>
-            <li>
-              Required assets including copy, logo vectors, contact databases, pipeline criteria,
-              and review links.
-            </li>
-            <li>
-              Clear feedback during design validation steps. We are not responsible for delays
-              caused by missing client-side approvals or carrier registry bottlenecks (e.g. A2P
-              10DLC trust score approvals).
-            </li>
-          </ul>
         </section>
 
         <section>
-          <h2 className="font-display text-2xl font-bold text-brand-primary mt-6 mb-3">
-            3. Fees, Payments, & Milestone Invoicing
-          </h2>
-          <p>Payment criteria are determined before commencing work:</p>
-          <ul className="list-disc pl-5 space-y-2 mt-2">
-            <li>
-              <strong>Milestone Payments:</strong> Standard projects are billed in milestones (e.g.
-              50% deposit, 50% upon delivery/handover) via Stripe invoice or through third-party
-              platforms (Fiverr).
-            </li>
-            <li>
-              <strong>Retainers:</strong> Ongoing optimization retainers are billed monthly in
-              advance and must be cleared within 5 business days of the invoice date to avoid
-              support suspensions.
-            </li>
-            <li>
-              <strong>Third-Party Costs:</strong> You are directly responsible for your own
-              subscription costs for GoHighLevel, Twilio usage, Mailgun volume, Zapier/Make tasks,
-              hosting fees, and domains.
-            </li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="font-display text-2xl font-bold text-brand-primary mt-6 mb-3">
-            4. Intellectual Property
-          </h2>
-          <ul className="list-disc pl-5 space-y-2 mt-2">
-            <li>
-              <strong>Client Ownership:</strong> Upon full and final payment of all outstanding
-              invoices, you own the customized layouts, content copy, database records, and
-              workflows built specifically for your sub-account.
-            </li>
-            <li>
-              <strong>FHDTech Property:</strong> We retain all rights, title, and ownership of our
-              proprietary GoHighLevel SaaS Snapshots, pre-engineered custom scripts, database
-              schemas, and developer templates built prior to or independently of this engagement.
-              We retain the right to showcase screenshots of non-confidential layouts in our
-              portfolio.
-            </li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="font-display text-2xl font-bold text-brand-primary mt-6 mb-3">
-            5. Warranties & Service Disclaimer
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            3. Eligibility and Business Status
           </h2>
           <p>
-            We warrant that our services will be performed with professional workmanship in
-            accordance with industry standards. However, services are provided on an "as is" and "as
-            available" basis. We do not warrant that integrations will be completely uninterrupted
-            or error-free due to dependency on external API changes (e.g., GHL, Twilio, OpenAI,
-            Meta). We are not responsible for changes made by your team after the 30-day tune-up
-            handover window.
+            Our solutions are structured for business owners and professional entities. By engaging
+            our services, you warrant that you possess the legal authority to enter into financial
+            and operational contracts.
           </p>
         </section>
 
         <section>
-          <h2 className="font-display text-2xl font-bold text-brand-primary mt-6 mb-3">
-            6. Limitation of Liability
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            4. Account Registration and Access Details
           </h2>
           <p>
-            To the maximum extent permitted by law, FHDTech and Fahid Ali shall not be liable for
-            any indirect, incidental, special, consequential, or punitive damages, or any loss of
-            profits or revenues (whether incurred directly or indirectly), or any loss of data, use,
-            goodwill, or other intangible losses resulting from:
-          </p>
-          <ul className="list-disc pl-5 space-y-2 mt-2">
-            <li>Your use of or inability to access our services or website.</li>
-            <li>System hacks, WP website database breaches, or API connection issues.</li>
-            <li>SMS delivery failures due to carrier registration delays.</li>
-          </ul>
-          <p className="mt-2">
-            In no event shall our total aggregate liability exceed the total fees paid by you to
-            FHDTech for the specific service under dispute.
+            To implement GHL snapshots or WP cleanups, you may be required to share technical
+            access. You agree to generate secure credentials and restrict access to unauthorized
+            team members.
           </p>
         </section>
 
         <section>
-          <h2 className="font-display text-2xl font-bold text-brand-primary mt-6 mb-3">
-            7. Termination
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            5. Client Cooperation Commitments
           </h2>
           <p>
-            Either party may terminate an ongoing retainer or project agreement with 14 days written
-            notice if the other party breaches any material term of these Terms. Upon termination,
-            you remain liable for all work performed and costs incurred up to the date of
-            termination.
+            Our delivery timelines rely on client cooperation. You agree to submit design assets,
+            SMS copywriting, forms details, and domain DNS access within 5 business days of request.
           </p>
         </section>
 
         <section>
-          <h2 className="font-display text-2xl font-bold text-brand-primary mt-6 mb-3">
-            8. Governing Law & Jurisdiction
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            6. Third-Party Account & Software Responsibilities
           </h2>
           <p>
-            These Terms and any dispute arising out of or related to them shall be governed by and
-            construed in accordance with the laws of Pakistan, without regard to its conflict of law
-            principles. Any legal action or proceeding shall be brought exclusively in the courts of
-            Lahore, Punjab, Pakistan.
+            Clients are solely responsible for their billing accounts with third-party vendors. You
+            must maintain active credit cards on GoHighLevel, Twilio, Mailgun, and web hosting
+            profiles to prevent connection drops.
           </p>
         </section>
 
         <section>
-          <h2 className="font-display text-2xl font-bold text-brand-primary mt-6 mb-3">
-            9. Contact
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            7. Project Milestones and Handover Sprints
           </h2>
-          <p>Questions or requests regarding these Terms & Conditions should be directed to:</p>
-          <address className="not-italic mt-2 bg-slate-50 p-4 rounded-xl border border-slate-100 text-sm space-y-1">
-            <p>
-              <strong>FHDTech</strong> (Fahid Ali)
-            </p>
-            <p>Lahore, Punjab, Pakistan</p>
-            <p>
-              Email:{" "}
-              <a
-                href="mailto:Fahaidaliofficial@gmail.com"
-                className="text-brand-accent hover:underline"
-              >
-                Fahaidaliofficial@gmail.com
-              </a>
-            </p>
-            <p>WhatsApp: +92 348 4103239</p>
-          </address>
+          <p>
+            All larger projects are split into milestones. Upon completing a milestone, we provide a
+            preview link. You are required to submit revision requests within a 7-day review window.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            8. Invoicing, Payments, and Billing Cycles
+          </h2>
+          <p>
+            One-off project milestones are invoiced with a 50% deposit and 50% due on deployment.
+            Monthly CRM maintenance retainers are invoiced 5 days prior to the start of the billing
+            month.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            9. Late Payments, Suspensions, and Recovery Fees
+          </h2>
+          <p>
+            Invoices unpaid past 10 calendar days will trigger an automated pause on your CRM
+            integrations, custom code servers, and support availability. A reactivation fee may
+            apply.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            10. Client Data and Opt-In Integrity
+          </h2>
+          <p>
+            You warrant that all phone numbers and email contacts imported into pipelines built by
+            FHDTech were legally acquired. We are not liable for legal actions resulting from spam
+            messaging.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            11. Intellectual Property Ownership Rules
+          </h2>
+          <p>
+            Upon receipt of your final milestone payment, ownership of custom configured assets
+            transfers to you. We retain ownership of our core SNAPSHOT skeletons and pre-engineered
+            templates.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            12. Prohibited Activities on Website
+          </h2>
+          <p>
+            You may not hack, crawl, scrape, mirror, or inject scripts into fhdtech.com. You are
+            forbidden from reverse-engineering our codebases or reselling our customized developer
+            Snapshots without consent.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            13. Service Warranty and Workmanship Quality
+          </h2>
+          <p>
+            We warrant that our solutions are implemented using standard frameworks. We offer a
+            30-day post-handover support window to fix configuration errors without extra fees.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            14. Disclaimer of Warranties
+          </h2>
+          <p>
+            Our tools are provided on an "as-is" basis. We make no warranty that your custom
+            integrations will run without downtime, due to reliance on external SaaS API systems.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            15. Indemnification
+          </h2>
+          <p>
+            You agree to indemnify, defend, and hold harmless FHDTech and Fahid Ali from any claims,
+            losses, or legal costs arising from your configuration choices or data breaches.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            16. Limitation of Liability
+          </h2>
+          <p>
+            To the maximum extent permitted under law, our aggregate liability for any claims
+            arising under our contract is limited strictly to the amount paid to us for the specific
+            disputed project milestone.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            17. Force Majeure
+          </h2>
+          <p>
+            FHDTech shall not be held liable for delivery delays or failures caused by natural
+            disasters, telecommunications outages, global server failures, or carrier registry
+            blocks.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            18. Dispute Resolution and Arbitration
+          </h2>
+          <p>
+            Any disputes arising out of your contract will first be addressed via friendly
+            negotiations. If unresolved after 30 days, the dispute shall be resolved through
+            arbitration.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            19. Governing Law and Jurisdiction
+          </h2>
+          <p>
+            These terms and all project agreements shall be governed by and interpreted in
+            accordance with the laws of Pakistan. The courts of Lahore hold exclusive jurisdiction.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            20. Contact Information
+          </h2>
+          <p>
+            For questions or formal contract communications, please email us at{" "}
+            <a
+              href="mailto:Fahaidaliofficial@gmail.com"
+              className="text-brand-accent font-semibold hover:underline"
+            >
+              Fahaidaliofficial@gmail.com
+            </a>{" "}
+            or reach out on WhatsApp at +92 348 4103239.
+          </p>
         </section>
       </div>
     </div>

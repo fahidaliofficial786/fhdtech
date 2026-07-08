@@ -3,11 +3,11 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: [
-      { title: "Privacy Policy | FHDTech" },
+      { title: "Enterprise Privacy Policy | FHDTech" },
       {
         name: "description",
         content:
-          "FHDTech Privacy Policy. Understand how we collect, process, and protect client and user data, including GoHighLevel integration and Twilio/SMS compliance.",
+          "Detailed Enterprise Privacy Policy for FHDTech. GDPR, CCPA, Twilio SMS compliant data handling guidelines.",
       },
       { name: "robots", content: "noindex, nofollow" },
     ],
@@ -22,205 +22,235 @@ function PrivacyPage() {
       <h1 className="font-display text-4xl font-bold text-brand-primary">Privacy Policy</h1>
       <p className="mt-4 text-sm text-slate-500">Last updated: 8 July 2026</p>
 
-      <div className="prose prose-slate mt-10 max-w-none text-slate-600 space-y-6">
-        <p className="lead text-lg text-slate-500 font-medium">
-          At FHDTech (“we”, “us”, “our”, “FHDTech”), founded by Fahid Ali, we prioritize the
-          protection of personal data. This Privacy Policy details how we collect, handle, process,
-          and protect your information when you interact with our website (fhdtech.com), book
-          consultations, use our forms, or engage us for GoHighLevel CRM, AI automation, or custom
-          development services.
+      <div className="prose prose-slate mt-10 max-w-none text-slate-600 space-y-8">
+        <p className="lead text-lg text-slate-500 font-medium border-l-4 border-brand-accent pl-4">
+          FHDTech (“FHDTech”, “we”, “us”, “our”), founded and operated by Fahid Ali, operates
+          fhdtech.com. This Enterprise Privacy Policy describes our commitment to protection of
+          personal data and detail how we collect, store, process, share, and protect your
+          information.
         </p>
 
-        <hr className="border-slate-100 my-8" />
-
         <section>
-          <h2 className="font-display text-2xl font-bold text-brand-primary mt-6 mb-3">
-            1. Information We Collect
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            1. Scope of This Policy
           </h2>
           <p>
-            We may collect and process several categories of information, depending on how you use
-            our website and services:
-          </p>
-          <ul className="list-disc pl-5 space-y-2 mt-2">
-            <li>
-              <strong>Personal Contact Data:</strong> Name, business name, physical address, email
-              address, WhatsApp number, and telephone numbers submitted via our contact forms,
-              newsletter signup, or scheduling tools.
-            </li>
-            <li>
-              <strong>Consultation & Business Data:</strong> Information concerning your current CRM
-              platform, sales pipelines, lead generation bottlenecks, website platforms, hosting
-              credentials, and business processes shared during strategy scoping.
-            </li>
-            <li>
-              <strong>Usage & Device Information:</strong> Your IP address, browser type, operating
-              system, referrer URL, pages visited, date/time stamps, and basic geolocation data
-              gathered via standard server logs and cookies.
-            </li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="font-display text-2xl font-bold text-brand-primary mt-6 mb-3">
-            2. How We Use Your Information
-          </h2>
-          <p>We use your information strictly for legitimate business interests, including:</p>
-          <ul className="list-disc pl-5 space-y-2 mt-2">
-            <li>
-              Providing and managing the services you hire us to perform (e.g., configuring
-              GoHighLevel sub-accounts, deploying AI voice agents, custom WordPress setups).
-            </li>
-            <li>
-              Processing form requests, sending proposal PDFs, and executing Calendly meeting
-              reminders.
-            </li>
-            <li>
-              Configuring third-party integrations (Twilio, Mailgun, Stripe, Zapier, Make) on your
-              behalf as authorized.
-            </li>
-            <li>
-              Complying with legal, carrier, and regulatory frameworks (e.g., verifying business
-              registrations for A2P 10DLC compliance).
-            </li>
-            <li>Improving our website performance, layout, and localized SEO keyword mapping.</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="font-display text-2xl font-bold text-brand-primary mt-6 mb-3">
-            3. GoHighLevel & Third-Party Service Providers
-          </h2>
-          <p>
-            We build on top of industry-leading software. When we configure systems for you, your
-            data may be processed by external sub-processors under their respective terms:
-          </p>
-          <ul className="list-disc pl-5 space-y-2 mt-2">
-            <li>
-              <strong>GoHighLevel:</strong> As our primary CRM stack, all contact records, leads,
-              pipeline tracking, SMS/Email history, and calendar slots are stored and processed on
-              GoHighLevel servers.
-            </li>
-            <li>
-              <strong>Twilio & Mailgun:</strong> Telephony, SMS routing, A2P 10DLC verification
-              campaigns, and transaction email delivery run through these carriers. We configure
-              these with your direct sub-accounts, ensuring you retain ownership of your data.
-            </li>
-            <li>
-              <strong>Stripe:</strong> Payment processing for project fees and retainers are secured
-              directly via Stripe. We do not store credit card credentials on our servers.
-            </li>
-            <li>
-              <strong>Calendly:</strong> Booking scheduling slots for free consultations utilizes
-              Calendly API.
-            </li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="font-display text-2xl font-bold text-brand-primary mt-6 mb-3">
-            4. Twilio SMS & A2P 10DLC Compliance
-          </h2>
-          <p>To comply with carrier guidelines in North America (US/Canada):</p>
-          <ul className="list-disc pl-5 space-y-2 mt-2">
-            <li>
-              No mobile information will be shared with third parties/affiliates for marketing or
-              promotional purposes.
-            </li>
-            <li>
-              All subscription databases and SMS opt-in data are kept strictly confidential and
-              isolated within your dedicated CRM sub-account.
-            </li>
-            <li>
-              We configure opt-out keywords (STOP, END, CANCEL) on all workflows to guarantee
-              carrier compliance.
-            </li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="font-display text-2xl font-bold text-brand-primary mt-6 mb-3">
-            5. Cookies and Consent Tracking
-          </h2>
-          <p>
-            FHDTech uses basic tracking cookies and local storage tokens to optimize website
-            experiences, save cookie consent choices (via our vertical Cookie Banner), and track
-            standard user flows. You can configure your browser to decline optional cookies, though
-            some custom forms or calendar elements may lose functionality.
+            This policy applies to all visitors of fhdtech.com, clients who utilize our CRM setup
+            services, subscribers to our tutorials, and users who input information into our forms
+            or book consultation calls.
           </p>
         </section>
 
         <section>
-          <h2 className="font-display text-2xl font-bold text-brand-primary mt-6 mb-3">
-            6. Data Retention & Security
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            2. Who We Are (Data Controller)
           </h2>
           <p>
-            We implement robust administrative, technical, and physical security measures to
-            safeguard your personal data. When providing WP malware removal or GHL setup services,
-            we enforce strict password hashing and credentials sharing security rules. We retain
-            your information only as long as necessary to fulfill service agreements or comply with
-            legal requirements.
+            FHDTech acts as the primary data controller for the information you submit directly to
+            our website. For CRM configurations where we set up databases on your behalf, we act as
+            a data processor under your instructions.
           </p>
         </section>
 
         <section>
-          <h2 className="font-display text-2xl font-bold text-brand-primary mt-6 mb-3">
-            7. Your Rights under GDPR, CCPA, and Global Laws
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            3. Legal Basis for Processing Data (GDPR)
           </h2>
           <p>
-            If you reside in the European Union (EEA), United Kingdom, or certain US states (like
-            California), you hold specific privacy rights:
+            We process personal data based on the performance of our contract with you, your
+            explicit consent, compliance with our legal and carrier obligations, and our legitimate
+            interests in protecting website integrity.
           </p>
-          <ul className="list-disc pl-5 space-y-2 mt-2">
-            <li>
-              <strong>Access & Portability:</strong> The right to request copies of the personal
-              data we hold on you.
-            </li>
-            <li>
-              <strong>Rectification:</strong> The right to correct incomplete or inaccurate data.
-            </li>
-            <li>
-              <strong>Erasure (Right to be Forgotten):</strong> The right to request that we delete
-              your contact records from our systems, subject to pending financial contracts or legal
-              retention duties.
-            </li>
-            <li>
-              <strong>Opt-Out:</strong> The right to opt out of promotional emails or SMS sequences
-              at any time.
-            </li>
-          </ul>
-          <p className="mt-2">
-            To invoke any of these rights, email us at{" "}
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            4. Information You Directly Provide to Us
+          </h2>
+          <p>
+            We collect names, email addresses, phone numbers, WhatsApp contact credentials, business
+            names, project budgets, and technical requirements that you submit voluntarily via form
+            components.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            5. Technical Information Collected Automatically
+          </h2>
+          <p>
+            Our servers log system metadata, including your IP address, browser user-agent string,
+            operating system version, referring URLs, screen resolution, and behavioral logs
+            concerning pages visited.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            6. Information We Obtain From Third Parties
+          </h2>
+          <p>
+            We may receive professional profile information, company directories, and public
+            business data from platforms like LinkedIn, Google My Business, or freelance
+            marketplaces (Fiverr) to verify your account registration.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            7. How We Utilize Your Data
+          </h2>
+          <p>
+            We use your data to configure CRM pipelines, set up AI models, dispatch billing invoices
+            via Stripe, send WhatsApp consultation reminders, and perform localized SEO audit scans
+            for your business.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            8. GoHighLevel CRM Processing Rules
+          </h2>
+          <p>
+            All leads, customer profiles, booking calendars, and automation pipelines designed
+            during project sprints are hosted on secure GoHighLevel server structures, adhering to
+            their data security policies.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            9. Twilio & Carrier A2P 10DLC compliance
+          </h2>
+          <p>
+            We enforce strict carrier compliance. Phone numbers, customer records, and opt-in
+            databases collected for SMS workflows are kept isolated and are never shared with third
+            parties for affiliate marketing purposes.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            10. Subprocessors and Service Providers
+          </h2>
+          <p>
+            We share necessary data with trusted subprocessors to perform core business functions,
+            including Calendly (scheduling), Stripe (invoicing), Formspree (forms), and Microsoft
+            Clarity (analytics).
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            11. International Data Transfers
+          </h2>
+          <p>
+            Your information may be transferred and stored on servers located outside your home
+            country, including the United States. We implement Standard Contractual Clauses (SCCs)
+            to guarantee secure transfers.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            12. Data Encryption and Hashing Security
+          </h2>
+          <p>
+            All database accesses, credentials, and API tokens shared with us during project
+            implementations are handled via encrypted password managers. We use HTTPS encryption
+            across all pages.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            13. Data Retention Specifications
+          </h2>
+          <p>
+            We retain client contact metadata for up to 3 years post-contract termination to comply
+            with audit requirements. Basic website traffic logs are deleted automatically after 90
+            days.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            14. Cookie Consent & Analytics Settings
+          </h2>
+          <p>
+            We use functional and analytical cookies to track user interactions. You can decline
+            optional cookie configurations through our user-facing Cookie Consent Banner without
+            losing page access.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            15. Your Rights Under GDPR (EEA/UK Residents)
+          </h2>
+          <p>
+            EU and UK residents have the right to access their data, correct inaccuracies, request
+            complete deletion, restrict processing, and export data in structured, machine-readable
+            formats.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            16. Your Rights Under CCPA/CPRA (California Residents)
+          </h2>
+          <p>
+            California consumers have the right to know what personal data we collect, opt out of
+            the sale or sharing of personal data, and request complete erasure of their stored
+            records.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            17. Twilio Opt-Out & Opt-In Rules
+          </h2>
+          <p>
+            All automated text messages configured by FHDTech contain opt-out capabilities.
+            Recipients can opt out of SMS flows by texting "STOP", "END", or "QUIT" at any point.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            18. Children’s Online Privacy Protection (COPPA)
+          </h2>
+          <p>
+            Our website and CRM services are designed strictly for business entities and adults. We
+            do not knowingly collect or target information from children under the age of 13.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            19. Updates to this Privacy Document
+          </h2>
+          <p>
+            We reserve the right to modify this policy as regulatory frameworks change. Significant
+            updates will be highlighted via a notification banner or emailed directly to registered
+            clients.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            20. Contacting Our Data Protection Officer
+          </h2>
+          <p>
+            For questions, data access requests, or deletion queries, please contact Fahid Ali at{" "}
             <a
               href="mailto:Fahaidaliofficial@gmail.com"
-              className="text-brand-accent hover:underline"
+              className="text-brand-accent font-semibold hover:underline"
             >
               Fahaidaliofficial@gmail.com
-            </a>
-            .
+            </a>{" "}
+            or message on WhatsApp at +92 348 4103239.
           </p>
-        </section>
-
-        <section>
-          <h2 className="font-display text-2xl font-bold text-brand-primary mt-6 mb-3">
-            8. Contact Information
-          </h2>
-          <p>For questions regarding this policy or data processing, please contact us at:</p>
-          <address className="not-italic mt-2 bg-slate-50 p-4 rounded-xl border border-slate-100 text-sm space-y-1">
-            <p>
-              <strong>FHDTech</strong> (Fahid Ali)
-            </p>
-            <p>Lahore, Punjab, Pakistan</p>
-            <p>
-              Email:{" "}
-              <a
-                href="mailto:Fahaidaliofficial@gmail.com"
-                className="text-brand-accent hover:underline"
-              >
-                Fahaidaliofficial@gmail.com
-              </a>
-            </p>
-            <p>WhatsApp: +92 348 4103239</p>
-          </address>
         </section>
       </div>
     </div>

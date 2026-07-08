@@ -3,11 +3,11 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/disclaimer")({
   head: () => ({
     meta: [
-      { title: "Disclaimer | FHDTech" },
+      { title: "Enterprise Legal Disclaimer | FHDTech" },
       {
         name: "description",
         content:
-          "Legal disclaimers for FHDTech. Understand our policies regarding earnings, client results, external links, and professional advice.",
+          "Enterprise Legal Disclaimer for FHDTech. Detailed information on professional services, performance results, and compliance disclaimers.",
       },
       { name: "robots", content: "noindex, nofollow" },
     ],
@@ -22,114 +22,220 @@ function DisclaimerPage() {
       <h1 className="font-display text-4xl font-bold text-brand-primary">Disclaimer</h1>
       <p className="mt-4 text-sm text-slate-500">Last updated: 8 July 2026</p>
 
-      <div className="prose prose-slate mt-10 max-w-none text-slate-600 space-y-6">
-        <p className="lead text-lg text-slate-500 font-medium">
-          The information provided on fhdtech.com (“Website”) and through our CRM, AI, web
-          development, and marketing consultation services is for general informational and
-          operational purposes only. Please read this Disclaimer carefully before utilizing our
-          services.
+      <div className="prose prose-slate mt-10 max-w-none text-slate-600 space-y-8">
+        <p className="lead text-lg text-slate-500 font-medium border-l-4 border-brand-accent pl-4">
+          This Disclaimer document contains critical legal disclosures regarding information
+          accuracy, earnings performance, third-party software, and legal compliance.
         </p>
 
-        <hr className="border-slate-100 my-8" />
-
         <section>
-          <h2 className="font-display text-2xl font-bold text-brand-primary mt-6 mb-3">
-            1. No Professional Advice
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            1. General Informational Purpose
           </h2>
           <p>
-            FHDTech, founded by Fahid Ali, is a technical systems configuration and custom
-            development studio. We build GoHighLevel databases, configure Twilio connections, write
-            automation code, and clean WordPress directories. We are not lawyers, certified public
-            accountants (CPAs), financial planners, or compliance officers. Any information or
-            templates we provide regarding carrier regulations (A2P 10DLC compliance), database
-            privacy (HIPAA configs), or terms of service does not constitute formal legal or tax
-            advice. You are advised to consult with certified professionals before implementing
-            custom legal configurations.
+            The contents of fhdtech.com are provided for general educational, informational, and
+            technical resource purposes only. We do not claim this content constitutes formal
+            contract guarantees.
           </p>
         </section>
 
         <section>
-          <h2 className="font-display text-2xl font-bold text-brand-primary mt-6 mb-3">
-            2. Earnings and Results Disclaimer
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            2. No Professional-Client Relationship
           </h2>
           <p>
-            Throughout our Website, case studies, and blog posts, we showcase client success
-            metrics, such as:
-          </p>
-          <ul className="list-disc pl-5 space-y-2 mt-2">
-            <li>"+$50K new revenue"</li>
-            <li>"+287% booked installs"</li>
-            <li>"15+ hours saved per week"</li>
-            <li>"Cost per lead reduced by 63%"</li>
-          </ul>
-          <p className="mt-3">
-            These statistics are historical results verified from actual engagements. However, these
-            outcomes represent exceptional performance and are not a promise, warranty, or guarantee
-            of similar results for your business. Your success using GoHighLevel CRM workflows, AI
-            voice agents, Google/Facebook ads, or SEO strategies depends on factors outside our
-            control, including your market competition, sales representative skill levels, customer
-            service quality, pricing, and general economic conditions.
+            Browsing this Website, reading blog guides, downloading free automation snapshots, or
+            filling out consultation forms does not establish a formal developer-client
+            relationship.
           </p>
         </section>
 
         <section>
-          <h2 className="font-display text-2xl font-bold text-brand-primary mt-6 mb-3">
-            3. Third-Party Links & Integrations Disclaimer
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            3. No Legal or Regulatory Compliance Advice
           </h2>
           <p>
-            Our Website and configured services may contain links or dependencies to external
-            third-party software, including GoHighLevel, Twilio, Mailgun, Zapier, Make, OpenAI, and
-            WordPress hosting providers. We have no control over the uptime, API changes, security
-            breaches, terms updates, or data practices of these external services. You engage with
-            these platforms at your own risk and are bound by their respective policies.
+            We configure systems, but we do not provide legal advice regarding privacy frameworks or
+            local marketing laws. You are advised to consult with qualified legal counsels.
           </p>
         </section>
 
         <section>
-          <h2 className="font-display text-2xl font-bold text-brand-primary mt-6 mb-3">
-            4. Reviews & Testimonials
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            4. A2P 10DLC Carrier Registry Disclaimer
           </h2>
           <p>
-            Testimonials appearing on our site are received via text, WhatsApp, or public Fiverr
-            reviews. They represent real-life experiences of individual clients who have utilized
-            our services. However, individual results vary and we do not claim that they are typical
-            of what every client will experience.
+            FHDTech helps submit business registration details to Twilio for A2P 10DLC compliance.
+            However, campaign approval status is decided solely by mobile carriers, not by FHDTech.
           </p>
         </section>
 
         <section>
-          <h2 className="font-display text-2xl font-bold text-brand-primary mt-6 mb-3">
-            5. "As-Is" Website Use
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            5. Earnings and Revenue Disclosures
           </h2>
           <p>
-            This Website and its contents are provided on an "as-is" basis. We make no
-            representations or warranties of any kind, express or implied, about the completeness,
-            accuracy, reliability, or availability of the Website, its templates, or graphics. Any
-            reliance you place on such information is strictly at your own risk.
+            Any financial metrics shown on this Website are previous case examples. We make no
+            promise or guarantee that your business will generate similar sales volumes or revenues.
           </p>
         </section>
 
         <section>
-          <h2 className="font-display text-2xl font-bold text-brand-primary mt-6 mb-3">
-            6. Contact Info
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            6. Lead Generation & Conversion Disclaimers
           </h2>
-          <p>If you have any questions about this Disclaimer, please contact us at:</p>
-          <address className="not-italic mt-2 bg-slate-50 p-4 rounded-xl border border-slate-100 text-sm space-y-1">
-            <p>
-              <strong>FHDTech</strong> (Fahid Ali)
-            </p>
-            <p>Lahore, Punjab, Pakistan</p>
-            <p>
-              Email:{" "}
-              <a
-                href="mailto:Fahaidaliofficial@gmail.com"
-                className="text-brand-accent hover:underline"
-              >
-                Fahaidaliofficial@gmail.com
-              </a>
-            </p>
-            <p>WhatsApp: +92 348 4103239</p>
-          </address>
+          <p>
+            FHDTech configures GHL pipelines to track leads. However, actual customer bookings,
+            response quality, and pipeline conversions rely heavily on your own sales
+            representatives.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            7. Local Maps and Google Search SEO Rankings
+          </h2>
+          <p>
+            We build map configurations for Local SEO. We do not guarantee page-one positioning on
+            Google Search, as engine ranking algorithms are proprietary and change frequently.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            8. AI Models & Conversational Voice Bot Failures
+          </h2>
+          <p>
+            AI conversational scripts utilize external LLM APIs (OpenAI, Gemini). We are not liable
+            for bot hallucinations, inaccurate responses, or API connection outages.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            9. WordPress Blacklist and Malware Cleaning
+          </h2>
+          <p>
+            Malware cleanups remove malicious scripts. However, we cannot guarantee that your server
+            will never be hacked again if your team uses weak credentials or outdated plugins.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            10. External Links & Sub-Processor Websites
+          </h2>
+          <p>
+            We link to third-party services like GHL, Twilio, and Calendly. We are not responsible
+            for the contents, privacy frameworks, or security practices of these external websites.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            11. Testimonials & Case Study Accuracy
+          </h2>
+          <p>
+            Client reviews reflect individual client-specific experiences. We do not represent that
+            these results are typical or that your business will experience identical metrics.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            12. Affiliate Disclosures & Software Partner Links
+          </h2>
+          <p>
+            FHDTech may display referral links for GoHighLevel or web hosting. If you purchase
+            through these links, we may receive commissions, which helps support our free content.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            13. Accuracy and Completeness of Site Content
+          </h2>
+          <p>
+            While we make efforts to keep website tutorials up to date, we do not warrant that
+            details are completely accurate, or free from typographical or technical errors.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            14. Server Security and Database Risks
+          </h2>
+          <p>
+            When you share technical logins, we use encrypted vaults. However, we do not assume
+            liability for data leaks resulting from pre-existing system vulnerabilities on your
+            servers.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            15. API Interruptions and Third-Party Downtime
+          </h2>
+          <p>
+            Automations connect multiple APIs. We are not liable for message delivery delays
+            resulting from third-party server downtime (e.g. Meta, Twilio, Zapier outages).
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            16. Client Action & Operational Implementation
+          </h2>
+          <p>
+            We deliver systems, but operational success requires client execution. If your team does
+            not monitor inbound leads, the software will not generate business growth.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            17. Free Snapshot & Template Disclaimers
+          </h2>
+          <p>
+            Free GHL snapshots or CRM scripts are provided "as-is" without support warranties. We do
+            not accept liability for workflows overwriting pre-existing data.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            18. Liability Cap on Free Content
+          </h2>
+          <p>
+            For any issues arising from free guides or documentation on fhdtech.com, our total
+            liability is capped strictly at $0.00.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            19. Revisions & Errata
+          </h2>
+          <p>
+            We may modify information on the website at any time without notice. We are not
+            committed to updating obsolete details on older blog articles.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-display text-xl font-bold text-brand-primary mt-6 mb-3">
+            20. Contact Information
+          </h2>
+          <p>
+            For queries regarding these legal disclaimers, please contact Fahid Ali at{" "}
+            <a
+              href="mailto:Fahaidaliofficial@gmail.com"
+              className="text-brand-accent font-semibold hover:underline"
+            >
+              Fahaidaliofficial@gmail.com
+            </a>{" "}
+            or WhatsApp at +92 348 4103239.
+          </p>
         </section>
       </div>
     </div>
